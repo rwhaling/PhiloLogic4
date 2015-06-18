@@ -30,7 +30,8 @@
 }
 
 body {
-    font-family: 'Averia Serif Libre', cursive;
+    font-family: 'Open Sans', sans-serif;
+	font-family: 'Roboto', sans-serif;
 }
 .text-content-area {
 	font-family: inherit;
@@ -168,6 +169,29 @@ s {
 	right: 5px;
 	top: 0;
 }
+#query-terms {
+	position: absolute;
+	z-index: 100;
+	padding: 20px 15px 0px 15px;
+	box-shadow: 0px .2em 8px .01em rgba(0,0,0,0.1);
+}
+#query-terms  > button:first-child {
+	position: absolute;
+	right: 2px;
+	top: 0;
+}
+#query-terms-list {
+	margin: 10px -5px;
+	max-height: 400px;
+	max-width: 800px;
+	overflow-y: scroll;
+}
+#query-terms-list li {
+	padding: 0px 5px;
+}
+#query-terms-list div {
+	padding: 0px 5px;
+}
 
 /*Pages links*/
 .more {
@@ -276,6 +300,7 @@ span.note {
 	display: block;
 }
 .xml-l::before {
+	content: '';
     font-family: 'Droid Sans Mono', sans-serif;
 	font-size: .7em;
 	white-space: pre;
@@ -288,6 +313,16 @@ span.note {
 }
 .xml-l[type="split"]::before {
     content: "";
+}
+.xml-milestone::before {
+	content: attr(n) "\00a0";
+	color: #909090;
+	font-family: 'Droid Sans Mono', sans-serif;
+	font-size: .6em;
+	vertical-align: .3em;
+}
+.xml-milestone[unit="card"]::before {
+	content: '';
 }
 .xml-lb[type="hyphenInWord"] {
     display: inline;
